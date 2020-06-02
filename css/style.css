@@ -23,6 +23,7 @@
     --border-partners-company-color: #AFB1B8;
     --line-developers-color: rgba(255, 255, 255, 0.1);
     --header-line-color: #ECECEC;
+    --bacgroung-portfolio-links: rgba(33, 150, 243, 0.9);
 }
 
 /* html {
@@ -129,6 +130,10 @@ header{
     padding-bottom: 32px;
 }
 
+.nav-link .title::before{
+    
+}
+
 .nav-link .title,
 .nav-contacts .item-link{
     display: inline-block;
@@ -143,7 +148,7 @@ header{
 
 .nav-link .title:hover,
 .nav-link .title:focus{
-    color: var(--link-color);
+    color: var(--link-color)
 }
 
 .nav-link .current{
@@ -165,7 +170,7 @@ header{
 }
 
 .nav-contacts .item-link{
-    display: flex;
+    display: block;
     align-items: center;
     color: var(--secondary-text-color); 
 }
@@ -276,6 +281,10 @@ header{
     margin-right: 30px;
 }
 
+.benefit-item{
+    position: relative;
+}
+
 .advantages-element:last-child, .benefit-item:last-child{
     margin-right: 0px;
 }
@@ -367,9 +376,12 @@ h2, .advantages{
 }
 
 .benefit-item .capabilities{
+    position: absolute;
+    bottom: 0;
     display: block;
     padding: 27px 80px;
     
+    width: 370px;
     color: var(--third-text-color);
     font-weight: 700;
     font-size: 14px;
@@ -564,6 +576,7 @@ h2, .advantages{
 .filtres-resources button:focus{
     color: var(--third-text-color);
     background-color: var(--link-color);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 .works{
@@ -612,9 +625,37 @@ h2, .advantages{
     height: 294px;
 }
 
+.portfolio-image{
+    position: relative;
+    display: flex;
+}
+
 .portfolio-elements:hover,
 .portfolio-elements:focus{
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-elements:hover .text,
+.portfolio-elements:focus .text{
+    opacity: 1;
+}
+
+.portfolio .text{
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    padding: 0px 24px;
+    margin: 0;
+
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    color: var(--third-text-color);
+    background-color: var(--bacgroung-portfolio-links);
+    width: 370px;
+    height: 294px;
+    font-size: 18px;
+    line-height: 1.56;
 }
 
 .portfolio-card{     
@@ -623,17 +664,6 @@ h2, .advantages{
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: 20px 24px;
-}
-
-.portfolio .text{
-    display: none;
-    color: var(--third-text-color);
-    text-align: left;
-    width: 332px;
-    font-size: 18px;
-    line-height: 1.56;
-    padding: 0;
-    margin: 0;
 }
 
 .portfolio-card h2{
