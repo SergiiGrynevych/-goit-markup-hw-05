@@ -102,7 +102,7 @@ span.last-name{
 }
 
 /* Верхняя панель перехода по ссылкам внутри сайта */
-header{
+.header-porfolio{
     border-bottom: 1px solid var(--header-line-color);
 }
 
@@ -152,8 +152,22 @@ header{
 }
 
 .nav-link .current{
+    position: relative;
     color: var(--link-color);
 }
+
+.nav-link .current::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+    background-color: var(--link-color);
+    border-radius: 2px;
+}
+
 /* Верхняя панель отправки мейла и телефонного звонка */
 .nav-contacts{
     display: flex;    
@@ -628,6 +642,8 @@ h2, .advantages{
 .portfolio-image{
     position: relative;
     display: flex;
+
+    transition: ;
 }
 
 .portfolio-elements:hover,
